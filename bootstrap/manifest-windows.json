@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "platform": "windows",
+  "python": {"main": "3.11", "wav2lip": "3.10", "gfpgan": "3.10"},
+  "min_windows_build": 17763,
+  "min_memory_gb": 16,
+  "disk_margin_bytes": 3000000000,
+  "rows": [
+    {
+      "id": "llm", "label": "Language model", "detail": "Phi-3-mini, 4-bit, run by llama.cpp (graphics card when it can, otherwise the processor)", "required": true,
+      "items": [
+        {"hf": "microsoft/Phi-3-mini-4k-instruct-gguf", "dest": "models/llm/Phi-3-mini-4k-instruct-gguf",
+         "include": ["Phi-3-mini-4k-instruct-q4.gguf"]},
+        {"url": ["https://github.com/ggml-org/llama.cpp/releases/download/b11821/llama-b11821-bin-win-vulkan-x64.zip"],
+         "dest": "envs/llama.cpp/llama-b11821-bin-win-vulkan-x64.zip", "extract": "envs/llama.cpp", "check": "llama-server.exe",
+         "sha256": "d94a408c8f80550b3b4edc8712d1e3f2fb3642abd846ad53c452dae26dfc8a3b", "min_bytes": 1000000}
+      ]
+    },
+    {
+      "id": "voice", "label": "Voice model", "detail": "XTTS-v2, clones your voice from a short recording",
+      "items": [
+        {"hf": "coqui/XTTS-v2", "dest": "models/xtts",
+         "include": ["model.pth", "config.json", "vocab.json", "speakers_xtts.pth", "hash.md5"]}
+      ]
+    },
+    {
+      "id": "lipsync", "label": "Lip-sync model", "detail": "Wav2Lip (GAN weights)",
+      "items": [
+        {"url": ["https://huggingface.co/Nekochu/Wav2Lip/resolve/main/wav2lip_gan.pth",
+                 "https://huggingface.co/numz/wav2lip_studio/resolve/main/Wav2lip/wav2lip_gan.pth"],
+         "dest": "models/wav2lip/wav2lip_gan.pth", "min_bytes": 1000000}
+      ]
+    },
+    {
+      "id": "facedet", "label": "Face detector", "detail": "S3FD for lip-sync, YuNet for the photo check",
+      "items": [
+        {"url": ["https://huggingface.co/Nekochu/Wav2Lip/resolve/main/s3fd.pth",
+                 "https://www.adrianbulat.com/downloads/python-fan/s3fd-619a316812.pth"],
+         "dest": "models/wav2lip/s3fd.pth", "min_bytes": 1000000},
+        {"url": ["https://github.com/opencv/opencv_zoo/raw/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx",
+                 "https://huggingface.co/opencv/face_detection_yunet/resolve/main/face_detection_yunet_2023mar.onnx"],
+         "dest": "models/face/face_detection_yunet_2023mar.onnx", "min_bytes": 100000, "optional": true}
+      ]
+    },
+    {
+      "id": "sharpen", "label": "Face sharpener", "detail": "GFPGAN v1.4 and its face-parsing models",
+      "items": [
+        {"url": ["https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/GFPGANv1.4.pth"],
+         "dest": "models/gfpgan/GFPGANv1.4.pth", "min_bytes": 1000000},
+        {"url": ["https://github.com/xinntao/facexlib/releases/download/v0.1.0/detection_Resnet50_Final.pth"],
+         "dest": "models/gfpgan/gfpgan/weights/detection_Resnet50_Final.pth", "min_bytes": 1000000},
+        {"url": ["https://github.com/xinntao/facexlib/releases/download/v0.2.2/parsing_parsenet.pth"],
+         "dest": "models/gfpgan/gfpgan/weights/parsing_parsenet.pth", "min_bytes": 1000000}
+      ]
+    },
+    {
+      "id": "embedder", "label": "Search model", "detail": "all-mpnet-base-v2, finds the closest thing you said", "required": true,
+      "items": [
+        {"hf": "sentence-transformers/all-mpnet-base-v2", "dest": "models/embedder/all-mpnet-base-v2",
+         "include": ["*.json", "*.txt", "model.safetensors", "1_Pooling/config.json"]}
+      ]
+    },
+    {
+      "id": "hindi", "label": "Hindi translator", "detail": "opus-mt-en-hi, for spoken answers in Hindi",
+      "items": [
+        {"hf": "Helsinki-NLP/opus-mt-en-hi", "dest": "models/mt/opus-mt-en-hi",
+         "include": ["*.json", "*.spm"], "one_of": ["model.safetensors", "pytorch_model.bin"]}
+      ]
+    },
+    {
+      "id": "envs", "label": "Preparing environments", "detail": "Python, three isolated environments, ffmpeg", "required": true,
+      "steps": [
+        {"id": "python", "label": "Python runtimes", "expected_bytes": 260000000},
+        {"id": "env-main", "label": "Main environment", "lock": "main-win.lock", "python": "main", "expected_bytes": 1100000000},
+        {"id": "env-wav2lip", "label": "Lip-sync environment", "lock": "wav2lip-win.lock", "python": "wav2lip", "expected_bytes": 650000000},
+        {"id": "env-gfpgan", "label": "Sharpening environment", "lock": "gfpgan-win.lock", "python": "gfpgan", "expected_bytes": 290000000,
+         "after": ["basicsr==1.4.2", "facexlib==0.3.0", "gfpgan==1.3.8"]},
+        {"id": "wav2lip-src", "label": "Lip-sync code", "expected_bytes": 2000000,
+         "url": ["https://github.com/Rudrabha/Wav2Lip/archive/refs/heads/master.zip"]},
+        {"id": "finish", "label": "Copying ffmpeg and tidying up", "expected_bytes": 0}
+      ]
+    }
+  ]
+}

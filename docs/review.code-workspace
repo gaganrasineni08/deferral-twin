@@ -1,0 +1,7 @@
+{
+  "folders": [
+    { "name": "Deferral Twin · code", "path": ".." },
+    { "name": "Your twin's data (questions, answers, memory)", "path": "/Users/gaganchowdaryrasineni/Library/Application Support/DeferralTwin/twin" }
+  ],
+  "settings": { "files.exclude": { "**/__pycache__": true, "**/.venv": true, "**/node_modules": true, "dist/.work": true } }
+}

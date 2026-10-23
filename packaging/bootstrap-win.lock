@@ -1,0 +1,18 @@
+# pywebview for the Windows bootstrapper (Edge WebView2 through pythonnet). Compiled with:
+#    uv pip compile <(echo pywebview==6.2.1) --python-platform x86_64-pc-windows-msvc --python-version 3.12 -o packaging/bootstrap-win.lock
+bottle==0.13.4
+    # via pywebview
+cffi==2.1.1
+    # via clr-loader
+clr-loader==0.3.1
+    # via pythonnet
+proxy-tools==0.1.0
+    # via pywebview
+pycparser==3.12
+    # via cffi
+pythonnet==3.2.1
+    # via pywebview
+pywebview==6.2.1
+    # via -r bw.in
+typing-extensions==4.16.0
+    # via pywebview

@@ -1,0 +1,82 @@
+/* Setup screens. Same tokens as the twin's own interface (app/static/styles.css), system fonts only: works offline. */
+:root {
+  --bg: #f3f5f8; --surface: #ffffff; --sunk: #eaeef3; --ink: #111820; --muted: #586473; --line: #d8dfe7;
+  --accent: #2c46c4; --accent-ink: #ffffff; --accent-soft: #e3e8fb;
+  --ok: #0b7d60; --ok-soft: #dcf2ea; --warn: #a35f00; --warn-soft: #fbefd9; --bad: #b3261e; --bad-soft: #fbe4e2;
+  --display: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
+  --body: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c1016; --surface: #141a22; --sunk: #10151c; --ink: #e5ebf2; --muted: #95a2b1; --line: #253141;
+    --accent: #93a6ff; --accent-ink: #0b1230; --accent-soft: #1b2448;
+    --ok: #4fd3a9; --ok-soft: #0e2b23; --warn: #f2b45a; --warn-soft: #30240e; --bad: #ff8a80; --bad-soft: #3a1714;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c1016; --surface: #141a22; --sunk: #10151c; --ink: #e5ebf2; --muted: #95a2b1; --line: #253141;
+  --accent: #93a6ff; --accent-ink: #0b1230; --accent-soft: #1b2448;
+  --ok: #4fd3a9; --ok-soft: #0e2b23; --warn: #f2b45a; --warn-soft: #30240e; --bad: #ff8a80; --bad-soft: #3a1714;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--body); -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: var(--display); margin: 0; line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance; }
+h1 { font-size: clamp(1.6rem, 3.6vw, 2.2rem); font-weight: 700; }
+h2 { font-size: 1.2rem; font-weight: 650; }
+p { margin: 0; }
+.wrap { max-width: 720px; margin: 0 auto; padding: 44px 16px 80px; display: grid; gap: 18px; outline: none; }
+.muted { color: var(--muted); }
+.small { font-size: 0.86rem; }
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.eyebrow { font: 600 0.72rem/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.mark { width: 44px; height: 44px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: grid; gap: 14px; }
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.spacer { flex: 1; }
+.btn { font: 600 0.95rem/1 var(--body); border: 1px solid transparent; background: var(--accent); color: var(--accent-ink); padding: 11px 18px; border-radius: 9px; cursor: pointer; }
+.btn:hover { filter: brightness(1.06); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn.quiet { background: var(--surface); color: var(--ink); border-color: var(--line); }
+.btn.danger { background: var(--bad); color: #fff; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+ul.facts { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+ul.facts li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; }
+ul.facts .ic { width: 28px; height: 28px; border-radius: 8px; background: var(--accent-soft); display: grid; place-items: center; font: 600 0.8rem/1 var(--mono); color: var(--accent); }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; }
+.kv b { font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 600; }
+.checks { display: grid; gap: 10px; }
+.check { display: grid; grid-template-columns: 24px 1fr; gap: 10px; align-items: start; }
+.tick { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font: 700 0.75rem/1 var(--mono); background: var(--sunk); color: var(--muted); }
+.tick.ok { background: var(--ok); color: var(--surface); }
+.tick.bad { background: var(--bad); color: #fff; }
+.tick.run { background: transparent; border: 2px solid var(--accent); border-right-color: transparent; animation: spin 0.9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.comp { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 12px 0; border-top: 1px solid var(--line); }
+.comp:first-child { border-top: 0; padding-top: 0; }
+.comp .name { font-weight: 600; display: flex; gap: 8px; align-items: center; }
+.comp .size { font: 500 0.82rem/1.4 var(--mono); color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+.comp .bar { grid-column: 1 / -1; }
+.bar { height: 6px; border-radius: 99px; background: var(--sunk); overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--accent); border-radius: 99px; transition: width 0.4s ease; }
+.comp.done .bar i { background: var(--ok); }
+.comp.error .bar i { background: var(--bad); }
+.overall .bar { height: 10px; }
+.state { font: 600 0.7rem/1 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 7px; border-radius: 6px; background: var(--sunk); color: var(--muted); }
+.state.done { background: var(--ok-soft); color: var(--ok); }
+.state.active { background: var(--accent-soft); color: var(--accent); }
+.state.error { background: var(--bad-soft); color: var(--bad); }
+.banner { border-radius: 10px; padding: 12px 14px; background: var(--warn-soft); color: var(--ink); border: 1px solid color-mix(in srgb, var(--warn) 30%, transparent); }
+.banner.bad { background: var(--bad-soft); border-color: color-mix(in srgb, var(--bad) 30%, transparent); }
+.banner.ok { background: var(--ok-soft); border-color: color-mix(in srgb, var(--ok) 30%, transparent); }
+pre.log { font: 0.75rem/1.45 var(--mono); background: var(--sunk); border-radius: 8px; padding: 10px; overflow: auto; max-height: 220px; white-space: pre-wrap; margin: 0; }
+.splash { min-height: 70vh; display: grid; place-items: center; text-align: center; gap: 14px; align-content: center; }
+.pulse { width: 64px; height: 64px; animation: breathe 1.8s ease-in-out infinite; }
+@keyframes breathe { 50% { transform: scale(0.92); opacity: 0.7; } }
+@media (prefers-reduced-motion: reduce) { .pulse, .tick.run { animation: none; } .bar i { transition: none; } }
+
+main:focus { outline: none; }

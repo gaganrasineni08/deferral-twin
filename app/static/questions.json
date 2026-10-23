@@ -1,0 +1,857 @@
+{
+ "version": 1,
+ "likert_labels": [
+  "Strongly disagree",
+  "Disagree",
+  "Neutral",
+  "Agree",
+  "Strongly agree"
+ ],
+ "sections": [
+  {
+   "title": "About you",
+   "note": "Short answers are fine."
+  },
+  {
+   "title": "Everyday preferences",
+   "note": "Pick the closest one."
+  },
+  {
+   "title": "What would you do?",
+   "note": "Two or three sentences each. Say what you would actually do."
+  },
+  {
+   "title": "What you believe",
+   "note": "How much do you agree?"
+  },
+  {
+   "title": "How you tend to be",
+   "note": "How much does each sentence describe you?"
+  },
+  {
+   "title": "Either or",
+   "note": "Pick the one that is closer to you."
+  },
+  {
+   "title": "In your own words",
+   "note": "Take your time. Longer answers help the twin most."
+  },
+  {
+   "title": "Quick re-check",
+   "note": "These sound like earlier questions. Answer them fresh without scrolling back."
+  }
+ ],
+ "questions": [
+  {
+   "id": "q001",
+   "section": "About you",
+   "type": "text",
+   "question": "Which city do you call home?"
+  },
+  {
+   "id": "q002",
+   "section": "About you",
+   "type": "text",
+   "question": "What are you studying, and why did you choose it?"
+  },
+  {
+   "id": "q003",
+   "section": "About you",
+   "type": "text",
+   "question": "Which languages do you speak, and which one do you think in?"
+  },
+  {
+   "id": "q004",
+   "section": "About you",
+   "type": "text",
+   "question": "What is the first thing you do after you wake up?"
+  },
+  {
+   "id": "q005",
+   "section": "About you",
+   "type": "text",
+   "question": "Describe a normal weekday in a few sentences."
+  },
+  {
+   "id": "q006",
+   "section": "About you",
+   "type": "text",
+   "question": "What is your favourite food, and is there anything you never eat?"
+  },
+  {
+   "id": "q007",
+   "section": "About you",
+   "type": "text",
+   "question": "What kind of music do you listen to most?"
+  },
+  {
+   "id": "q008",
+   "section": "About you",
+   "type": "text",
+   "question": "Name a film or series you love and say why."
+  },
+  {
+   "id": "q009",
+   "section": "About you",
+   "type": "text",
+   "question": "Which sports do you play or follow?"
+  },
+  {
+   "id": "q010",
+   "section": "About you",
+   "type": "text",
+   "question": "What do you do to relax?"
+  },
+  {
+   "id": "q011",
+   "section": "About you",
+   "type": "text",
+   "question": "Which place would you most like to travel to, and why?"
+  },
+  {
+   "id": "q012",
+   "section": "About you",
+   "type": "text",
+   "question": "What skill are you learning right now?"
+  },
+  {
+   "id": "q013",
+   "section": "Everyday preferences",
+   "type": "choice",
+   "question": "Are you a morning person or a night owl?",
+   "options": [
+    "Definitely morning",
+    "Somewhat morning",
+    "Somewhat night",
+    "Definitely night"
+   ]
+  },
+  {
+   "id": "q014",
+   "section": "Everyday preferences",
+   "type": "choice",
+   "question": "Tea or coffee?",
+   "options": [
+    "Tea",
+    "Coffee",
+    "Both",
+    "Neither"
+   ]
+  },
+  {
+   "id": "q015",
+   "section": "Everyday preferences",
+   "type": "choice",
+   "question": "Where would you rather spend a holiday?",
+   "options": [
+    "Beach",
+    "Mountains",
+    "City",
+    "Countryside"
+   ]
+  },
+  {
+   "id": "q016",
+   "section": "Everyday preferences",
+   "type": "choice",
+   "question": "When you travel, do you plan every detail or improvise?",
+   "options": [
+    "Plan every detail",
+    "Rough plan",
+    "Improvise"
+   ]
+  },
+  {
+   "id": "q017",
+   "section": "Everyday preferences",
+   "type": "choice",
+   "question": "To reach a friend, do you prefer to text or call?",
+   "options": [
+    "Text",
+    "Call",
+    "Voice note",
+    "Depends on the topic"
+   ]
+  },
+  {
+   "id": "q018",
+   "section": "Everyday preferences",
+   "type": "choice",
+   "question": "Do you do your best work alone or in a team?",
+   "options": [
+    "Alone",
+    "In a team",
+    "Both equally"
+   ]
+  },
+  {
+   "id": "q019",
+   "section": "Everyday preferences",
+   "type": "choice",
+   "question": "When do you usually finish assignments?",
+   "options": [
+    "Well before the deadline",
+    "A day or two before",
+    "At the last minute"
+   ]
+  },
+  {
+   "id": "q020",
+   "section": "Everyday preferences",
+   "type": "choice",
+   "question": "How do you prefer to learn something new?",
+   "options": [
+    "Books and articles",
+    "Videos",
+    "Doing it myself",
+    "Someone teaching me"
+   ]
+  },
+  {
+   "id": "q021",
+   "section": "Everyday preferences",
+   "type": "choice",
+   "question": "Cook at home or order food?",
+   "options": [
+    "Cook at home",
+    "Order food",
+    "Eat out",
+    "Mix of all"
+   ]
+  },
+  {
+   "id": "q022",
+   "section": "Everyday preferences",
+   "type": "choice",
+   "question": "How do you handle phone notifications?",
+   "options": [
+    "All on",
+    "Only important ones",
+    "Mostly silent"
+   ]
+  },
+  {
+   "id": "q023",
+   "section": "Everyday preferences",
+   "type": "choice",
+   "question": "A message arrives while you are busy. What do you do?",
+   "options": [
+    "Reply immediately",
+    "Reply within the hour",
+    "Reply later in the day",
+    "Reply when I get to it"
+   ]
+  },
+  {
+   "id": "q024",
+   "section": "Everyday preferences",
+   "type": "choice",
+   "question": "Which social setting suits you best?",
+   "options": [
+    "Big party",
+    "Small group of friends",
+    "One close friend",
+    "Alone"
+   ]
+  },
+  {
+   "id": "q025",
+   "section": "Everyday preferences",
+   "type": "choice",
+   "question": "On a free evening, what do you most often choose?",
+   "options": [
+    "Go out",
+    "Watch something",
+    "Build or study something",
+    "Play a game",
+    "Sleep"
+   ]
+  },
+  {
+   "id": "q026",
+   "section": "What would you do?",
+   "type": "text",
+   "question": "A friend cancels plans at the last minute. What do you do?"
+  },
+  {
+   "id": "q027",
+   "section": "What would you do?",
+   "type": "text",
+   "question": "A teammate has not done their part of a project and the deadline is tomorrow. What do you do?"
+  },
+  {
+   "id": "q028",
+   "section": "What would you do?",
+   "type": "text",
+   "question": "You think a teacher graded your work unfairly. What do you do?"
+  },
+  {
+   "id": "q029",
+   "section": "What would you do?",
+   "type": "text",
+   "question": "You find a bug in code you submitted yesterday. What do you do?"
+  },
+  {
+   "id": "q030",
+   "section": "What would you do?",
+   "type": "text",
+   "question": "A stranger asks for directions while you are late. What do you do?"
+  },
+  {
+   "id": "q031",
+   "section": "What would you do?",
+   "type": "text",
+   "question": "You can take a famous company with dull work or a small startup with exciting work. Which one, and why?"
+  },
+  {
+   "id": "q032",
+   "section": "What would you do?",
+   "type": "text",
+   "question": "A group chat you are in turns into an argument. What do you do?"
+  },
+  {
+   "id": "q033",
+   "section": "What would you do?",
+   "type": "text",
+   "question": "Someone gives harsh feedback on something you worked hard on. How do you react?"
+  },
+  {
+   "id": "q034",
+   "section": "What would you do?",
+   "type": "text",
+   "question": "Your laptop dies the night before a submission. What do you do?"
+  },
+  {
+   "id": "q035",
+   "section": "What would you do?",
+   "type": "text",
+   "question": "Someone takes credit for your idea in a meeting. What do you do?"
+  },
+  {
+   "id": "q036",
+   "section": "What would you do?",
+   "type": "text",
+   "question": "A friend asks to copy your assignment. What do you say?"
+  },
+  {
+   "id": "q037",
+   "section": "What would you do?",
+   "type": "text",
+   "question": "You have a completely free weekend. How do you spend it?"
+  },
+  {
+   "id": "q038",
+   "section": "What would you do?",
+   "type": "text",
+   "question": "You have been stuck on one problem for three hours. What do you do next?"
+  },
+  {
+   "id": "q039",
+   "section": "What would you do?",
+   "type": "text",
+   "question": "You are asked to lead a project nobody else wants. What do you do?"
+  },
+  {
+   "id": "q040",
+   "section": "What would you do?",
+   "type": "text",
+   "question": "You forget a friend's birthday. What do you do?"
+  },
+  {
+   "id": "q041",
+   "section": "What would you do?",
+   "type": "text",
+   "question": "Someone you respect strongly disagrees with you in public. How do you respond?"
+  },
+  {
+   "id": "q042",
+   "section": "What you believe",
+   "type": "likert",
+   "question": "Learning by building beats learning by reading."
+  },
+  {
+   "id": "q043",
+   "section": "What you believe",
+   "type": "likert",
+   "question": "Honesty matters more than tact."
+  },
+  {
+   "id": "q044",
+   "section": "What you believe",
+   "type": "likert",
+   "question": "I would rather be right than be liked."
+  },
+  {
+   "id": "q045",
+   "section": "What you believe",
+   "type": "likert",
+   "question": "An AI assistant should always say so when it does not know something."
+  },
+  {
+   "id": "q046",
+   "section": "What you believe",
+   "type": "likert",
+   "question": "Finishing something good enough beats polishing it forever."
+  },
+  {
+   "id": "q047",
+   "section": "What you believe",
+   "type": "likert",
+   "question": "I prefer stability to variety in my life."
+  },
+  {
+   "id": "q048",
+   "section": "What you believe",
+   "type": "likert",
+   "question": "Rules should be followed even when they seem pointless."
+  },
+  {
+   "id": "q049",
+   "section": "What you believe",
+   "type": "likert",
+   "question": "Asking for help is a sign of strength."
+  },
+  {
+   "id": "q050",
+   "section": "What you believe",
+   "type": "likert",
+   "question": "Privacy matters more than convenience."
+  },
+  {
+   "id": "q051",
+   "section": "What you believe",
+   "type": "likert",
+   "question": "I trust data more than my gut feeling."
+  },
+  {
+   "id": "q052",
+   "section": "What you believe",
+   "type": "likert",
+   "question": "Competition brings out my best."
+  },
+  {
+   "id": "q053",
+   "section": "What you believe",
+   "type": "likert",
+   "question": "Most people mean well."
+  },
+  {
+   "id": "q054",
+   "section": "What you believe",
+   "type": "likert",
+   "question": "I would rather go deep on one thing than learn a little about many."
+  },
+  {
+   "id": "q055",
+   "section": "What you believe",
+   "type": "likert",
+   "question": "I enjoy explaining things to other people."
+  },
+  {
+   "id": "q056",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "I start conversations with new people easily."
+  },
+  {
+   "id": "q057",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "Long social events leave me drained."
+  },
+  {
+   "id": "q058",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "I tend to stay quiet in groups."
+  },
+  {
+   "id": "q059",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "I like being the centre of attention."
+  },
+  {
+   "id": "q060",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "I try to see things from other people's point of view."
+  },
+  {
+   "id": "q061",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "I get irritated quickly by other people's mistakes."
+  },
+  {
+   "id": "q062",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "I avoid arguments to keep the peace."
+  },
+  {
+   "id": "q063",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "I help others even when it is inconvenient."
+  },
+  {
+   "id": "q064",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "I keep my things organised."
+  },
+  {
+   "id": "q065",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "I often leave tasks until the last minute."
+  },
+  {
+   "id": "q066",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "I follow through on what I promise."
+  },
+  {
+   "id": "q067",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "I set goals and track my progress."
+  },
+  {
+   "id": "q068",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "Deadlines stress me out."
+  },
+  {
+   "id": "q069",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "I stay calm when things go wrong."
+  },
+  {
+   "id": "q070",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "I worry about things I cannot control."
+  },
+  {
+   "id": "q071",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "My mood changes quickly."
+  },
+  {
+   "id": "q072",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "I enjoy trying unfamiliar things."
+  },
+  {
+   "id": "q073",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "I like abstract or theoretical ideas."
+  },
+  {
+   "id": "q074",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "Routine bores me."
+  },
+  {
+   "id": "q075",
+   "section": "How you tend to be",
+   "type": "likert",
+   "question": "I am curious about how things work."
+  },
+  {
+   "id": "q076",
+   "section": "Either or",
+   "type": "choice",
+   "question": "Stable work with predictable days, or risky work with a big upside?",
+   "options": [
+    "Stable",
+    "Risky with upside"
+   ]
+  },
+  {
+   "id": "q077",
+   "section": "Either or",
+   "type": "choice",
+   "question": "A fast approximate answer, or a slow exact one?",
+   "options": [
+    "Fast and approximate",
+    "Slow and exact"
+   ]
+  },
+  {
+   "id": "q078",
+   "section": "Either or",
+   "type": "choice",
+   "question": "One big project, or many small ones?",
+   "options": [
+    "One big project",
+    "Many small ones"
+   ]
+  },
+  {
+   "id": "q079",
+   "section": "Either or",
+   "type": "choice",
+   "question": "A hard truth, or a comforting kindness?",
+   "options": [
+    "Hard truth",
+    "Comforting kindness"
+   ]
+  },
+  {
+   "id": "q080",
+   "section": "Either or",
+   "type": "choice",
+   "question": "Lead the team, or support it?",
+   "options": [
+    "Lead",
+    "Support"
+   ]
+  },
+  {
+   "id": "q081",
+   "section": "Either or",
+   "type": "choice",
+   "question": "Specialise deeply, or stay a generalist?",
+   "options": [
+    "Specialise",
+    "Generalist"
+   ]
+  },
+  {
+   "id": "q082",
+   "section": "Either or",
+   "type": "choice",
+   "question": "Move abroad for an opportunity, or stay close to family?",
+   "options": [
+    "Move abroad",
+    "Stay close"
+   ]
+  },
+  {
+   "id": "q083",
+   "section": "Either or",
+   "type": "choice",
+   "question": "Start with the theory, or jump into practice?",
+   "options": [
+    "Theory first",
+    "Practice first"
+   ]
+  },
+  {
+   "id": "q084",
+   "section": "Either or",
+   "type": "choice",
+   "question": "Quality or speed?",
+   "options": [
+    "Quality",
+    "Speed"
+   ]
+  },
+  {
+   "id": "q085",
+   "section": "Either or",
+   "type": "choice",
+   "question": "When an AI gives you an answer, do you trust it or verify it?",
+   "options": [
+    "Usually trust it",
+    "Usually verify it"
+   ]
+  },
+  {
+   "id": "q086",
+   "section": "Either or",
+   "type": "choice",
+   "question": "A perfect plan, or a flexible one?",
+   "options": [
+    "Perfect plan",
+    "Flexible plan"
+   ]
+  },
+  {
+   "id": "q087",
+   "section": "Either or",
+   "type": "choice",
+   "question": "Win alone, or share the credit?",
+   "options": [
+    "Win alone",
+    "Share the credit"
+   ]
+  },
+  {
+   "id": "q088",
+   "section": "In your own words",
+   "type": "text",
+   "question": "Describe your ideal weekend."
+  },
+  {
+   "id": "q089",
+   "section": "In your own words",
+   "type": "text",
+   "question": "What are you most proud of so far?"
+  },
+  {
+   "id": "q090",
+   "section": "In your own words",
+   "type": "text",
+   "question": "What annoys you the most?"
+  },
+  {
+   "id": "q091",
+   "section": "In your own words",
+   "type": "text",
+   "question": "How do you react when you are asked something and you do not know the answer?"
+  },
+  {
+   "id": "q092",
+   "section": "In your own words",
+   "type": "text",
+   "question": "What would your close friends say is your best quality?"
+  },
+  {
+   "id": "q093",
+   "section": "In your own words",
+   "type": "text",
+   "question": "Which hobby or topic could you talk about for an hour?"
+  },
+  {
+   "id": "q094",
+   "section": "In your own words",
+   "type": "text",
+   "question": "How do you give advice to a friend who is struggling with a decision?"
+  },
+  {
+   "id": "q095",
+   "section": "In your own words",
+   "type": "text",
+   "question": "What does a good day look like for you?"
+  },
+  {
+   "id": "q096",
+   "section": "In your own words",
+   "type": "text",
+   "question": "Where do you want to be in five years?"
+  },
+  {
+   "id": "q097",
+   "section": "In your own words",
+   "type": "text",
+   "question": "How do you like to receive feedback?"
+  },
+  {
+   "id": "r01",
+   "section": "Quick re-check",
+   "type": "choice",
+   "question": "If you could only drink one for the rest of the year, which would it be?",
+   "repeat_of": "q014",
+   "options": [
+    "Tea",
+    "Coffee",
+    "Both",
+    "Neither"
+   ]
+  },
+  {
+   "id": "r02",
+   "section": "Quick re-check",
+   "type": "choice",
+   "question": "Are you at your best early in the day or late at night?",
+   "repeat_of": "q013",
+   "options": [
+    "Definitely morning",
+    "Somewhat morning",
+    "Somewhat night",
+    "Definitely night"
+   ]
+  },
+  {
+   "id": "r03",
+   "section": "Quick re-check",
+   "type": "choice",
+   "question": "On holiday, do you prefer a detailed plan or making it up as you go?",
+   "repeat_of": "q016",
+   "options": [
+    "Plan every detail",
+    "Rough plan",
+    "Improvise"
+   ]
+  },
+  {
+   "id": "r04",
+   "section": "Quick re-check",
+   "type": "choice",
+   "question": "Given the choice, do you work better alone or with other people?",
+   "repeat_of": "q018",
+   "options": [
+    "Alone",
+    "In a team",
+    "Both equally"
+   ]
+  },
+  {
+   "id": "r05",
+   "section": "Quick re-check",
+   "type": "likert",
+   "question": "Being honest is more important than being tactful.",
+   "repeat_of": "q043"
+  },
+  {
+   "id": "r06",
+   "section": "Quick re-check",
+   "type": "likert",
+   "question": "AI assistants ought to admit when they do not know the answer.",
+   "repeat_of": "q045"
+  },
+  {
+   "id": "r07",
+   "section": "Quick re-check",
+   "type": "likert",
+   "question": "I prefer mastering one subject to sampling many.",
+   "repeat_of": "q054"
+  },
+  {
+   "id": "r08",
+   "section": "Quick re-check",
+   "type": "likert",
+   "question": "Talking to people I have just met comes easily to me.",
+   "repeat_of": "q056"
+  },
+  {
+   "id": "r09",
+   "section": "Quick re-check",
+   "type": "likert",
+   "question": "I tend to postpone tasks until the deadline is close.",
+   "repeat_of": "q065"
+  },
+  {
+   "id": "r10",
+   "section": "Quick re-check",
+   "type": "likert",
+   "question": "New experiences appeal to me.",
+   "repeat_of": "q072"
+  },
+  {
+   "id": "r11",
+   "section": "Quick re-check",
+   "type": "text",
+   "question": "How do you usually unwind?",
+   "repeat_of": "q010"
+  },
+  {
+   "id": "r12",
+   "section": "Quick re-check",
+   "type": "text",
+   "question": "Which food do you enjoy the most, and what do you avoid?",
+   "repeat_of": "q006"
+  }
+ ]
+}

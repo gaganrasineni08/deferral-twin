@@ -1,0 +1,5 @@
+# Voice + avatar (multimodal). The maintained Coqui fork (PyPI: coqui-tts) supports
+# Python 3.10-3.14 and keeps the same `TTS` import, so it works on current Colab.
+# The original `TTS` package only supports Python <3.12.
+coqui-tts>=0.27
+openai-whisper

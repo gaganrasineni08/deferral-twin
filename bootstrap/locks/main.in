@@ -1,0 +1,22 @@
+mlx-lm
+coqui-tts
+torch<2.9                         # 2.9+ makes coqui-tts need torchcodec, which needs FFmpeg shared libraries a clean Mac lacks
+torchaudio<2.9                    # XTTS reads the reference voice with torchaudio.load (soundfile backend)
+transformers>=4.57,<5
+sentence-transformers
+faiss-cpu>=1.13
+fastapi
+uvicorn
+python-multipart
+pyyaml
+pillow
+pillow-heif
+opencv-python-headless>=4.10,<5   # 5.0 dropped the Haar cascades used as the fallback face check
+imageio-ffmpeg
+sentencepiece
+sacremoses
+psutil
+sounddevice
+google-genai                      # optional Online mode (Gemini); the key lives in the macOS Keychain
+keyring                           # macOS Keychain access for that key
+pypdf                             # reading a CV or job report uploaded as PDF

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Camera and microphone test</title>
+<link rel="stylesheet" href="setup.css">
+</head>
+<body>
+<main class="wrap">
+  <div><p class="eyebrow">Developer check · HANDOFF.md 9.2</p><h1>Can this window use the camera and microphone?</h1></div>
+  <p class="muted">Run with <code>python3 bootstrap/launcher.py --media-test</code> inside the built app. macOS should ask once for each, with the reasons from Info.plist. If either fails, onboarding falls back to recording in Python and to the file chooser.</p>
+  <section class="panel"><div class="checks" id="out"></div><video id="v" playsinline muted autoplay style="width:100%;max-width:360px;border-radius:10px;background:var(--sunk)"></video></section>
+  <div class="row"><button class="btn" id="go" type="button">Test camera and microphone</button></div>
+</main>
+<script>
+const out = document.getElementById("out");
+function line(ok, label, detail) {
+  const d = document.createElement("div"); d.className = "check";
+  d.innerHTML = `<span class="tick ${ok ? "ok" : "bad"}">${ok ? "✓" : "✕"}</span><div><b></b><p class="small muted"></p></div>`;
+  d.querySelector("b").textContent = label; d.querySelector("p").textContent = detail; out.append(d);
+}
+document.getElementById("go").onclick = async () => {
+  out.textContent = "";
+  line(!!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia), "getUserMedia exists", navigator.userAgent);
+  line(typeof MediaRecorder !== "undefined", "MediaRecorder exists", typeof MediaRecorder !== "undefined" && MediaRecorder.isTypeSupported ? "audio/mp4: " + MediaRecorder.isTypeSupported("audio/mp4") + ", audio/webm: " + MediaRecorder.isTypeSupported("audio/webm") : "");
+  for (const [kind, c] of [["Microphone", { audio: true }], ["Camera", { video: true }]]) {
+    try {
+      const s = await navigator.mediaDevices.getUserMedia(c);
+      line(true, kind, s.getTracks().map((t) => t.label || t.kind).join(", "));
+      if (c.video) document.getElementById("v").srcObject = s; else s.getTracks().forEach((t) => t.stop());
+    } catch (e) { line(false, kind, e.name + ": " + e.message); }
+  }
+};
+</script>
+</body>
+</html>
